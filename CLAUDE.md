@@ -57,6 +57,26 @@
 | tester | TEST | テスト |
 | document-writer | DOC | ドキュメント整備 |
 
+## Worktree 必須ルール（実装フェーズ）
+
+FE / BE / INFRA / CICD は実装成果物を書き込む前に **必ず git worktree を作成** し、その中で編集すること。理由: メインツリーでの直接編集は他エージェントの並行作業・レビュー・ロールバックと衝突するため。
+
+- 配置規約: `../cc-agent-harness-wt-{task-id}`（リポジトリと兄弟ディレクトリ）
+- ブランチ命名: `claude/impl-{task-id}`（task-id は PM が発行する `TASK-XXX` を小文字化）
+- 作成コマンド例:
+
+  ```bash
+  git worktree add ../cc-agent-harness-wt-task-001 -b claude/impl-task-001
+  cd ../cc-agent-harness-wt-task-001
+  ```
+
+- 監視対象パス（worktree 外で編集するとフックが exit 2 でブロック）:
+  `frontend/`, `backend/`, `infrastructure/`, `tests/`, `.github/workflows/`
+- 除外（通常ツリーで編集可）: `.agent-team/`, `docs/`, `shared/`, `.claude/`, `scripts/`, ルート直下 `*.md`
+- 強制実装: `scripts/hook-require-worktree.sh` / `.ps1`（PreToolUse フック）
+- AR は実装フェーズの dispatch brief に `worktree_path` と `branch` を含めること。
+- 作業完了後は `git worktree remove` で後片付けする。
+
 ## ワークスペース
 
 `.agent-team/` と `docs/` を作業領域として使用。未初期化の場合は以下を実行:
