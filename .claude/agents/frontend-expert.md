@@ -1,6 +1,6 @@
 ---
 name: frontend-expert
-description: WEBアプリ開発チームのFrontend Expert。UI/UX実装、コンポーネント設計、レスポンシブ対応、状態管理、API結合を行う。Agent Router (AR) からディスパッチされ、frontend/ にコードを出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「フロントエンド実装」「UI作成」「コンポーネント設計」「画面実装」に使用。
+description: WEBアプリ開発チームのFrontend Expert。UI/UX実装、コンポーネント設計、レスポンシブ対応、状態管理、API結合を行う。Agent Router (AR) からディスパッチされ、frontend/ にコードを出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「フロントエンド実装」「UI作成」「コンポーネント設計」「画面実装」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
 tools:
   - Read
   - Write
@@ -52,6 +52,23 @@ frontend/src/
 - API呼び出しは**必ずサービスレイヤー（api/）経由**。コンポーネントから直接fetchしない
 - 環境変数は `.env` から読み込み、ハードコードしない
 - エラーハンドリングはError Boundaryパターン
+
+## 着手前チェック: git worktree の作成（必須）
+
+実装ファイル（`frontend/` `backend/` `infrastructure/` `tests/` `.github/workflows/`）を書き込む前に、必ず worktree を作成してその中で作業すること。メインツリーでの編集は PreToolUse フック (`scripts/hook-require-worktree.sh`) により exit 2 でブロックされる。
+
+1. AR の dispatch brief から `task_id` / `worktree_path` / `branch` を取得する
+   - 規約: `worktree_path = ../cc-agent-harness-wt-{task-id}`、`branch = claude/impl-{task-id}`
+2. 次のコマンドで worktree を作成（既存時はスキップ）:
+
+   ```bash
+   git worktree add ../cc-agent-harness-wt-<task-id> -b claude/impl-<task-id>
+   cd ../cc-agent-harness-wt-<task-id>
+  ```
+3. 以降の Write/Edit はすべて worktree 側で行う。
+4. 完了後、結果 JSON (`.agent-team/results/{agent}/`) に `worktree_path` と `branch` を記録する。
+5. 後片付けは REV 合格後に CEO 指示で `git worktree remove` を実施する。
+
 
 ## デザイン品質基準（shared/frontend-design-guidelines.md 準拠）
 

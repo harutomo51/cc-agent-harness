@@ -180,6 +180,17 @@ Agentツールでディスパッチ:
 
 出力: `.agent-team/routing/PLAN-NNN.md` に含む
 
+### 実装 Agent 向け dispatch brief の必須フィールド
+
+FE / BE / INFRA / CICD へのディスパッチ時、dispatch brief に以下を必ず含めること:
+
+- `task_id`: PM の `TASK-XXX`（小文字化したものを worktree/branch 名に使用）
+- `worktree_path`: `../cc-agent-harness-wt-{task-id}`
+- `branch`: `claude/impl-{task-id}`
+- `create_worktree_command`: `git worktree add {worktree_path} -b {branch}`
+
+実装 Agent は作業着手前にこの worktree を作成・cd する。未作成のままメインツリーに書き込むと PreToolUse フックが exit 2 でブロックする。
+
 ### 5. 実行結果の検証と再ルーティング
 
 各Agentの実行結果を検証し、必要に応じて再ルーティングする。

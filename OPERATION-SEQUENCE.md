@@ -215,6 +215,7 @@ sequenceDiagram
 - `FE/BE` は `PM` の WBS 完了前に開始しない
 - `BE` は `DBA` のスキーマ確定と migration 方針に従う
 - `REV/SEC/TEST` の結果が NG の場合は `KM` → `CG` で原因分析 → `AR` 経由で `FE/BE` に修正ディスパッチ → 不合格だったレビューAgentのみ再実行（全合格までループ、上限3回。3回で解消しない場合は人間にエスカレーション）
+- **FE/BE/INFRA/CICD は実装着手前に必ず git worktree を作成する**（`../cc-agent-harness-wt-{task-id}` / `claude/impl-{task-id}`）。メインツリーでの `frontend/` `backend/` `infrastructure/` `tests/` `.github/workflows/` への書き込みは PreToolUse フック (`scripts/hook-require-worktree.sh`) で exit 2 ブロックされる。AR は dispatch brief に `worktree_path` と `branch` を必ず含める。
 
 ## Responsibility Matrix
 

@@ -7,6 +7,9 @@
       "Edit(OPERATION-SEQUENCE.md)",
       "Edit(shared/review-findings.schema.json)",
       "Edit(shared/result.schema.json)",
+      "Bash(git push origin main*)",
+      "Bash(git push * main*)",
+      "Bash(git push --set-upstream * main*)",
       "Bash(git push --force*)",
       "Bash(git reset --hard*)",
       "Bash(rm -rf *)",
@@ -16,6 +19,22 @@
     ]
   },
   "hooks": {
+    "PreToolUse": [
+        {
+          "matcher": "Write|Edit|NotebookEdit",
+          "hooks": [
+              {
+                "type": "command",
+                "command": "bash scripts/hook-require-worktree.sh"
+              },
+              {
+                "type": "command",
+                "shell": "powershell",
+                "command": "pwsh -File scripts/hook-require-worktree.ps1"
+              }
+          ]
+        }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
