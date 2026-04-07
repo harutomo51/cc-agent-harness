@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate review JSON files against shared/review-findings.schema.json."""
+"""Validate review JSON files against .claude/shared/review-findings.schema.json."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--schema",
-        default="shared/review-findings.schema.json",
+        default=".claude/shared/review-findings.schema.json",
         help="Path to JSON schema file.",
     )
     parser.add_argument(

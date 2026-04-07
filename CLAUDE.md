@@ -72,8 +72,8 @@ FE / BE / INFRA / CICD は実装成果物を書き込む前に **必ず git work
 
 - 監視対象パス（worktree 外で編集するとフックが exit 2 でブロック）:
   `frontend/`, `backend/`, `infrastructure/`, `tests/`, `.github/workflows/`
-- 除外（通常ツリーで編集可）: `.agent-team/`, `docs/`, `shared/`, `.claude/`, `scripts/`, ルート直下 `*.md`
-- 強制実装: `scripts/hook-require-worktree.sh` / `.ps1`（PreToolUse フック）
+- 除外（通常ツリーで編集可）: `.agent-team/`, `docs/`, `.claude/`, ルート直下 `*.md`
+- 強制実装: `.claude/scripts/hook-require-worktree.sh` / `.ps1`（PreToolUse フック）
 - AR は実装フェーズの dispatch brief に `worktree_path` と `branch` を含めること。
 - 作業完了後は `git worktree remove` で後片付けする。
 
@@ -81,8 +81,8 @@ FE / BE / INFRA / CICD は実装成果物を書き込む前に **必ず git work
 
 `.agent-team/` と `docs/` を作業領域として使用。未初期化の場合は以下を実行:
 
-- Windows: `scripts/init-workspace.ps1`
-- Linux / macOS: `bash scripts/init-workspace.sh`
+- Windows: `.claude/scripts/init-workspace.ps1`
+- Linux / macOS: `bash .claude/scripts/init-workspace.sh`
 
 agent-router が策定した実行計画は `.agent-team/dispatch/plan-{timestamp}.json` に必ず保存し、各エージェントの結果は `.agent-team/results/{agent}/` に JSON で永続化する。圧縮で会話が失われても CEO が Read で計画を復元できる状態を保つ。
 

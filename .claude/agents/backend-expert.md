@@ -58,7 +58,7 @@ backend/src/
 
 ## 着手前チェック: git worktree の作成（必須）
 
-実装ファイル（`frontend/` `backend/` `infrastructure/` `tests/` `.github/workflows/`）を書き込む前に、必ず worktree を作成してその中で作業すること。メインツリーでの編集は PreToolUse フック (`scripts/hook-require-worktree.sh`) により exit 2 でブロックされる。
+実装ファイル（`frontend/` `backend/` `infrastructure/` `tests/` `.github/workflows/`）を書き込む前に、必ず worktree を作成してその中で作業すること。メインツリーでの編集は PreToolUse フック (`.claude/scripts/hook-require-worktree.sh`) により exit 2 でブロックされる。
 
 1. AR の dispatch brief から `task_id` / `worktree_path` / `branch` を取得する
    - 規約: `worktree_path = ../cc-agent-harness-wt-{task-id}`、`branch = claude/impl-{task-id}`

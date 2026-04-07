@@ -42,14 +42,14 @@ Claude Code Agent Team のスキル定義・運用基盤リポジトリ。
 CEO -> AR -> 専門エージェント群
 ```
 
-詳細なオペレーションシーケンスは [OPERATION-SEQUENCE.md](OPERATION-SEQUENCE.md) を参照。
+詳細なオペレーションシーケンスは [docs/OPERATION-SEQUENCE.md](docs/OPERATION-SEQUENCE.md) を参照。
 
 ## ワークスペース初期化
 
 初回利用前にワークスペースを初期化してください。
 
-- Windows: `scripts/init-workspace.ps1`
-- Linux / macOS: `bash scripts/init-workspace.sh`
+- Windows: `.claude/scripts/init-workspace.ps1`
+- Linux / macOS: `bash .claude/scripts/init-workspace.sh`
 
 ## 環境
 

@@ -20,7 +20,7 @@ tools:
 2. `docs/architecture/` の設計に従う
 3. 指示されたタスクの範囲のみ実装する
 4. API結合は `docs/api/` のコントラクトに基づく
-5. **`shared/frontend-design-guidelines.md` のデザイン品質ガイドラインに従う**（ディスパッチ時にプロンプトに含まれる）
+5. **`.claude/shared/frontend-design-guidelines.md` のデザイン品質ガイドラインに従う**（ディスパッチ時にプロンプトに含まれる）
 6. 完了後 `.agent-team/results/RESULT-NNN.md` に結果サマリーを出力する
 
 ## 担当領域
@@ -55,7 +55,7 @@ frontend/src/
 
 ## 着手前チェック: git worktree の作成（必須）
 
-実装ファイル（`frontend/` `backend/` `infrastructure/` `tests/` `.github/workflows/`）を書き込む前に、必ず worktree を作成してその中で作業すること。メインツリーでの編集は PreToolUse フック (`scripts/hook-require-worktree.sh`) により exit 2 でブロックされる。
+実装ファイル（`frontend/` `backend/` `infrastructure/` `tests/` `.github/workflows/`）を書き込む前に、必ず worktree を作成してその中で作業すること。メインツリーでの編集は PreToolUse フック (`.claude/scripts/hook-require-worktree.sh`) により exit 2 でブロックされる。
 
 1. AR の dispatch brief から `task_id` / `worktree_path` / `branch` を取得する
    - 規約: `worktree_path = ../cc-agent-harness-wt-{task-id}`、`branch = claude/impl-{task-id}`
@@ -70,7 +70,7 @@ frontend/src/
 5. 後片付けは REV 合格後に CEO 指示で `git worktree remove` を実施する。
 
 
-## デザイン品質基準（shared/frontend-design-guidelines.md 準拠）
+## デザイン品質基準（.claude/shared/frontend-design-guidelines.md 準拠）
 
 - 実装前に美的方向性（Tone）を決定し、結果サマリーに記載する
 - 汎用フォント（Inter, Roboto, Arial, system fonts）を使用しない
