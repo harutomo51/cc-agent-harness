@@ -1,6 +1,7 @@
 ---
 name: backend-expert
 description: WEBアプリ開発チームのBackend Expert。API設計・実装、ビジネスロジック、認証・認可を行う。DB操作はDBA（Database Specialist）が設計したスキーマに基づいてRepository層を実装する。Agent Router (AR) からディスパッチされ、backend/ と docs/api/ にコードを出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「API実装」「バックエンド開発」「認証実装」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
+model: claude-sonnet-4-6
 tools:
   - Read
   - Write

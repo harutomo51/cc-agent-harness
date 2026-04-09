@@ -1,6 +1,7 @@
 ---
 name: tech-lead
 description: WEBアプリ開発チームのTech Lead。アーキテクチャ設計、技術スタック選定、コーディング規約策定、ADR作成を行う。Agent Router (AR) からディスパッチされ、docs/architecture/ に設計ドキュメントを出力する。成果物はKnowledge Manager (KM) にフィードバックする。「アーキテクチャ設計」「技術スタック選定」「CLAUDE.md生成」「ADR作成」「設計方針策定」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
+model: claude-opus-4-6
 tools:
   - Read
   - Write

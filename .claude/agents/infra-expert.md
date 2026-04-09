@@ -1,6 +1,7 @@
 ---
 name: infra-expert
 description: WEBアプリ開発チームのInfrastructure Expert。IaC、Docker、クラウドリソース、環境構築、ネットワーク設計、シークレット管理を行う。Agent Router (AR) からディスパッチされ、infrastructure/ にコードを出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「インフラ構築」「Docker化」「環境構築」「クラウド設定」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
+model: claude-sonnet-4-6
 tools:
   - Read
   - Write

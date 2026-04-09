@@ -1,6 +1,7 @@
 ---
 name: reviewer
 description: WEBアプリ開発チームのReviewer。コードレビュー、アーキテクチャ整合性チェック、コーディング規約準拠確認を行う。Agent Router (AR) からディスパッチされ、.agent-team/reviews/ にレビュー結果を出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「コードレビュー」「レビュー依頼」「品質チェック」「規約チェック」に使用。
+model: claude-opus-4-6
 tools:
   - Read
   - Write

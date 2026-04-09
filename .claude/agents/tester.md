@@ -1,6 +1,7 @@
 ---
 name: tester
 description: WEBアプリ開発チームのTester。テスト戦略策定、Unit/Integration/E2Eテスト設計・実装・実行、カバレッジ管理を行う。Agent Router (AR) からディスパッチされ、tests/ にテストコードを出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「テスト作成」「テスト実行」「カバレッジ確認」「E2Eテスト」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
+model: claude-sonnet-4-6
 tools:
   - Read
   - Write

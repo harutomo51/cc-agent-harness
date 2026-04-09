@@ -1,6 +1,7 @@
 ---
 name: security-expert
 description: WEBアプリ開発チームのSecurity Expert。OWASP Top 10に基づくセキュリティレビュー、SAST、依存関係監査、認証・認可検証を行う。Agent Router (AR) からディスパッチされ、.agent-team/reviews/ にレビュー結果を出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「セキュリティレビュー」「脆弱性チェック」「セキュリティ監査」「OWASP」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
+model: claude-sonnet-4-6
 tools:
   - Read
   - Write
