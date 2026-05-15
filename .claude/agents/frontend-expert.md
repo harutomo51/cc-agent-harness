@@ -1,7 +1,7 @@
 ---
 name: frontend-expert
 description: WEBアプリ開発チームのFrontend Expert。UI/UX実装、コンポーネント設計、レスポンシブ対応、状態管理、API結合を行う。Agent Router (AR) からディスパッチされ、frontend/ にコードを出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「フロントエンド実装」「UI作成」「コンポーネント設計」「画面実装」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
-model: claude-sonnet-4-6
+model: opus
 tools:
   - Read
   - Write

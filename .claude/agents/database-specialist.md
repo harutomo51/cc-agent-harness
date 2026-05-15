@@ -1,7 +1,7 @@
 ---
 name: database-specialist
 description: WEBアプリ開発チームのDatabase Specialist。ER図・テーブル設計、正規化/非正規化判断、マイグレーション戦略、インデックス設計、クエリ最適化、シードデータ設計を行う。Agent Router (AR) からディスパッチされ、docs/database/ にスキーマ設計書、backend/migrations/ にマイグレーションファイルを出力する。成果物はKnowledge Manager (KM) にフィードバックする。「DB設計」「スキーマ設計」「テーブル設計」「マイグレーション」「インデックス設計」「クエリ最適化」「ER図」「データモデリング」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
-model: claude-sonnet-4-6
+model: sonnet
 tools:
   - Read
   - Write

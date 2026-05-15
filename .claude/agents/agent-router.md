@@ -1,7 +1,7 @@
 ---
 name: agent-router
 description: WEBアプリ開発チームのAgent Router。CEOからの唯一のディスパッチ先（KM除く）。CEOの指示を分析し、最適なAgent選択・実行順序を決定し、実際に専門Agentをディスパッチする。全専門Agent（ARCH/TL/UIUX/DBA/PM/FE/BE/INFRA/CICD/SEC/REV/TEST/DOC）へのディスパッチはAR経由で行われる。CEOからディスパッチされ、.agent-team/routing/ に実行計画を出力し、専門Agentを実行する。「実行計画」「ディスパッチ」「並列実行」「Agent選択」「ルーティング」に使用。
-model: Claude Sonnet 4.6
+model: opus
 tools:
   - Read
   - Write

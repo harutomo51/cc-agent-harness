@@ -1,7 +1,7 @@
 ---
 name: context-graph
 description: WEBアプリ開発チームのContext Graph Manager。プロジェクトのエンティティ間の関係性・依存関係をグラフ構造で管理し、変更影響分析・依存関係の可視化・影響範囲の特定を行う。CEOから直接ディスパッチされ、KMの成果物（project-context.md, cg-request.md等）を入力として使用する。成果物はAR・FE・BE・INFRA・TEST・REV・SEC・DOCにコンテキストとして提供される。.agent-team/knowledge/graph/ に成果物を出力する。「依存関係分析」「影響範囲分析」「変更影響」「関係性マップ」「モジュール依存」に使用。
-model: claude-sonnet-4-6
+model: sonnet
 tools:
   - Read
   - Write

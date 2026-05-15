@@ -1,7 +1,7 @@
 ---
 name: document-writer
 description: WEBアプリ開発チームのDocument Agent。README、設計書、運用手順書、変更履歴（CHANGELOG）、API仕様書、環境構築手順、トラブルシューティングガイドなどの技術文書を作成・管理する。Agent Router (AR) からディスパッチされ、docs/ およびプロジェクトルートに文書を出力する。成果物はKnowledge Manager (KM) にフィードバックする。Context Graph (CG) からコンテキストを受け取る。「README作成」「ドキュメント整備」「運用手順書」「変更履歴」「CHANGELOG」「設計書まとめ」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
-model: claude-haiku-4-5-20251001
+model: sonnet
 tools:
   - Read
   - Write

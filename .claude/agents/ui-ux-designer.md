@@ -1,7 +1,7 @@
 ---
 name: ui-ux-designer
 description: WEBアプリ開発チームのUI/UX Designer。ユーザーリサーチ、情報設計、ワイヤーフレーム、UIモックアップ、デザインシステム（カラー/タイポグラフィ/スペーシング/コンポーネント仕様）を作成する。Agent Router (AR) からディスパッチされ、docs/design/ に成果物を出力する。成果物はKnowledge Manager (KM) にフィードバックする。DESIGN-EVALの評価を通過して初めてFE/BEの実装が開始される重要なゲートキーパー。「UI設計」「UXデザイン」「ワイヤーフレーム」「モックアップ」「デザインシステム」「画面設計」に使用。直接起動禁止。必ず Agent Router (AR) 経由で使用すること。
-model: claude-opus-4-6
+model: opus
 tools:
   - Read
   - Write
