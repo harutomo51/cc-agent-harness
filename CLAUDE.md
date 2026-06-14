@@ -4,7 +4,7 @@
 
 - 性質: Claude Code Agent Team のスキル定義・運用基盤（コード開発プロジェクトではない）
 - 主要ファイル形式: Markdown（エージェント定義）、JSON（スキーマ、タスク）
-- エージェント定義: `.claude/agents/`（19エージェント）
+- エージェント定義: `.claude/agents/`（22エージェント）
 
 ## Environment
 
@@ -21,7 +21,7 @@
 
 ## エージェントの使い方
 
-開発タスクは **CEO エージェント** に委任してください。理由: 19エージェントの並行作業を整合させるには統合判断を保持する単一ポイントが必要で（T-2.3 統合判断を委任しない）、CEOがその役割を担うため。
+開発タスクは **CEO エージェント** に委任してください。理由: 22エージェントの並行作業を整合させるには統合判断を保持する単一ポイントが必要で（T-2.3 統合判断を委任しない）、CEOがその役割を担うため。
 
 ### 例外: CEO を経由しない直呼び条件
 
@@ -43,6 +43,7 @@
 | **context-graph** | CG | 依存関係グラフ・変更影響分析 |
 | **architect-evaluator** | ARCH-EVAL | Gate 1: アーキテクチャ評価 |
 | **design-evaluator** | DESIGN-EVAL | Gate 2: デザイン評価 |
+| requirements-analyst | REQ | 要件定義・PRD・受け入れ基準（Phase 0） |
 | architect | ARCH | システム構造設計 |
 | tech-lead | TL | 技術スタック選定・規約策定 |
 | ui-ux-designer | UIUX | UI/UX設計 |
@@ -52,9 +53,11 @@
 | backend-expert | BE | API実装 |
 | infra-expert | INFRA | インフラ構築 |
 | cicd-engineer | CICD | CI/CDパイプライン |
+| sre-expert | SRE | 運用・監視・SLO・インシデント対応 |
 | security-expert | SEC | セキュリティ |
 | reviewer | REV | コードレビュー |
 | tester | TEST | テスト |
+| qa-lead | QA | 品質統括・受け入れ判定 |
 | document-writer | DOC | ドキュメント整備 |
 
 ## Worktree 必須ルール（実装フェーズ）
